@@ -2,24 +2,26 @@
 import UIKit
 import SnapKit
 
+enum Section {
+    case main
+}
+
 class HomeViewController: UIViewController {
     
-    enum Section {
-        case main
-    }
-    
+    // MARK: - Properties
     var dataSource: UICollectionViewDiffableDataSource<Section, Feed>!
     let homeView = HomeView()
     let homeViewModel = HomeViewModel()
     
-    // MARK: - initialize
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBasicAttributes()
         configureCollectionView()
     }
-    // MARK: - set basic
+    
+    // MARK: - Set Basic
     private func setBasicAttributes() {
         view = homeView
         title = "EndYourDay"
@@ -36,7 +38,7 @@ class HomeViewController: UIViewController {
         present(navController, animated: true)
     }
     
-    // MARK: - set and load collectionView
+    // MARK: - Set CollectionView
     private func configureCollectionView() {
         dataSource = UICollectionViewDiffableDataSource<Section, Feed>(collectionView: homeView.collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
