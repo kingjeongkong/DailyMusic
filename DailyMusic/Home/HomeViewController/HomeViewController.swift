@@ -25,10 +25,12 @@ class HomeViewController: UIViewController {
     private func setBasicAttributes() {
         view = homeView
         title = "EndYourDay"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"),
+        let addFeedBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"),
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(bringUpAddFeedView))
+        addFeedBarButton.accessibilityIdentifier = "plus"
+        navigationItem.rightBarButtonItem = addFeedBarButton
     }
     
     @objc private func bringUpAddFeedView() {

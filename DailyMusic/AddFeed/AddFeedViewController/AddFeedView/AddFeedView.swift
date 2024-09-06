@@ -33,12 +33,14 @@ class AddFeedView: UIView {
             $0.image = UIImage(systemName: "camera")
             $0.layer.borderWidth = 0.5
             $0.contentMode = .scaleAspectFit
+            $0.accessibilityIdentifier = "albumImageView"
         }
         
         captionTextField.do {
-            $0.placeholder = "How's your day today?"
+            $0.text = "New Test Caption" 
             $0.layer.borderWidth = 1
             $0.addPadding(left: 5, right: 5)
+            $0.accessibilityIdentifier = "captionTextField"
         }
     }
     
@@ -49,13 +51,13 @@ class AddFeedView: UIView {
         
         albumImageView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(safeAreaLayoutGuide)
-            $0.height.equalTo(350)
+            $0.height.equalTo(200)
         }
         
         captionTextField.snp.makeConstraints {
             $0.top.equalTo(albumImageView.snp.bottom).offset(40)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(60)
+            $0.bottom.equalTo(keyboardLayoutGuide.snp.top).offset(-50)
         }
     }
 }

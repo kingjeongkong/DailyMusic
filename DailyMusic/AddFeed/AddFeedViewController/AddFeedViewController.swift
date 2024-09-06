@@ -28,14 +28,18 @@ class AddFeedViewController: UIViewController {
     private func setInitialAttributes() {
         view = addFeedView
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"),
+        let closeBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"),
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(poptoMain))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "공유",
+        let shareBarButtonItem = UIBarButtonItem(title: "공유",
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(uploadFeed))
+        shareBarButtonItem.accessibilityIdentifier = "공유"
+        
+        navigationItem.leftBarButtonItem = closeBarButtonItem
+        navigationItem.rightBarButtonItem = shareBarButtonItem
     }
     
     @objc private func poptoMain() {

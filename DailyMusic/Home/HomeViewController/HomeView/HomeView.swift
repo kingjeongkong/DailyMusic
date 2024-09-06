@@ -38,11 +38,13 @@ class HomeView: UIView {
             $0.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "HomeCollectionViewCell")
             $0.backgroundColor = .systemBackground
             $0.collectionViewLayout = layout()
+            $0.accessibilityIdentifier = "homeCollectionView"
         }
         
         HomeView.activityIndicator.do {
             $0.style = .large
             $0.hidesWhenStopped = true
+            $0.accessibilityIdentifier = "activityIndicator"
         }
     }
     
