@@ -32,7 +32,11 @@
 		217387D02B934DED009FCF16 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387CF2B934DED009FCF16 /* MyProfileViewController.swift */; };
 		217387D52B935369009FCF16 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387D42B935369009FCF16 /* HomeView.swift */; };
 		217387DF2B935AD1009FCF16 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387DE2B935AD1009FCF16 /* HomeCollectionViewCell.swift */; };
-		217387E12B937BDF009FCF16 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387E02B937BDF009FCF16 /* HomeModel.swift */; };
+		21AACD6D2C8B778A0015D35E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD6C2C8B778A0015D35E /* Feed.swift */; };
+		21AACD712C8B792B0015D35E /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD702C8B792B0015D35E /* Repositories.swift */; };
+		21AACD792C8B7A8E0015D35E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD772C8B7A8E0015D35E /* HomeModel.swift */; };
+		21AACD7B2C8B7ACE0015D35E /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7A2C8B7ACE0015D35E /* Repositories.swift */; };
+		21AACD7E2C8B7C9F0015D35E /* FeedResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +78,11 @@
 		217387CF2B934DED009FCF16 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		217387D42B935369009FCF16 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		217387DE2B935AD1009FCF16 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		217387E02B937BDF009FCF16 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		21AACD6C2C8B778A0015D35E /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		21AACD702C8B792B0015D35E /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		21AACD772C8B7A8E0015D35E /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		21AACD7A2C8B7ACE0015D35E /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				217387BA2B933E86009FCF16 /* DailyMusic */,
-				213869982C8B12E500FB2300 /* DailyMusicTests */,
-				213869A52C8B1C0100FB2300 /* DailyMusicUITests */,
 				217387B92B933E86009FCF16 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,16 +206,15 @@
 		217387BA2B933E86009FCF16 /* DailyMusic */ = {
 			isa = PBXGroup;
 			children = (
-				217387BB2B933E86009FCF16 /* AppDelegate.swift */,
-				217387BD2B933E86009FCF16 /* SceneDelegate.swift */,
-				217387CF2B934DED009FCF16 /* MyProfileViewController.swift */,
-				2147F7722BCE6554001230D7 /* Extensions */,
-				217387D32B935349009FCF16 /* Home */,
-				211BDB072BC853CB00404C3D /* AddFeed */,
-				217387C42B933E87009FCF16 /* Assets.xcassets */,
-				217387C62B933E87009FCF16 /* LaunchScreen.storyboard */,
+				21AACD642C8B76C10015D35E /* Application */,
+				21AACD652C8B76F20015D35E /* Global */,
+				21AACD6A2C8B775D0015D35E /* Data */,
+				21AACD692C8B77550015D35E /* Domain */,
+				21AACD672C8B77150015D35E /* Presenter */,
 				2147F7732BCE6748001230D7 /* GoogleService-Info.plist */,
 				217387C92B933E87009FCF16 /* Info.plist */,
+				213869982C8B12E500FB2300 /* DailyMusicTests */,
+				213869A52C8B1C0100FB2300 /* DailyMusicUITests */,
 			);
 			path = DailyMusic;
 			sourceTree = "<group>";
@@ -219,7 +224,7 @@
 			children = (
 				217387D92B93596B009FCF16 /* HomeViewController */,
 				2147F7802BCE82E7001230D7 /* HomeViewModel */,
-				217387E22B937BE3009FCF16 /* Model */,
+				21AACD782C8B7A8E0015D35E /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -250,12 +255,108 @@
 			path = HomeFeedCell;
 			sourceTree = "<group>";
 		};
-		217387E22B937BE3009FCF16 /* Model */ = {
+		21AACD642C8B76C10015D35E /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				217387E02B937BDF009FCF16 /* HomeModel.swift */,
+				217387BB2B933E86009FCF16 /* AppDelegate.swift */,
+				217387BD2B933E86009FCF16 /* SceneDelegate.swift */,
+				217387C62B933E87009FCF16 /* LaunchScreen.storyboard */,
 			);
-			path = Model;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		21AACD652C8B76F20015D35E /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				2147F7722BCE6554001230D7 /* Extensions */,
+				21AACD662C8B76F80015D35E /* Resource */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		21AACD662C8B76F80015D35E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				217387C42B933E87009FCF16 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		21AACD672C8B77150015D35E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				217387D32B935349009FCF16 /* Home */,
+				211BDB072BC853CB00404C3D /* AddFeed */,
+				21AACD682C8B771F0015D35E /* MyProfile */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		21AACD682C8B771F0015D35E /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				217387CF2B934DED009FCF16 /* MyProfileViewController.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		21AACD692C8B77550015D35E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD6B2C8B777E0015D35E /* Entity */,
+				21AACD722C8B79310015D35E /* Interface */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		21AACD6A2C8B775D0015D35E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD7F2C8B7CA20015D35E /* DTO */,
+				21AACD7C2C8B7AD40015D35E /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		21AACD6B2C8B777E0015D35E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD6C2C8B778A0015D35E /* Feed.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		21AACD722C8B79310015D35E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD702C8B792B0015D35E /* Repositories.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		21AACD782C8B7A8E0015D35E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD772C8B7A8E0015D35E /* HomeModel.swift */,
+			);
+			name = Model;
+			path = DailyMusic/Presenter/Home/Model;
+			sourceTree = SOURCE_ROOT;
+		};
+		21AACD7C2C8B7AD40015D35E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD7A2C8B7ACE0015D35E /* Repositories.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		21AACD7F2C8B7CA20015D35E /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +524,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21AACD7E2C8B7C9F0015D35E /* FeedResponseDTO.swift in Sources */,
 				217387DF2B935AD1009FCF16 /* HomeCollectionViewCell.swift in Sources */,
+				21AACD6D2C8B778A0015D35E /* Feed.swift in Sources */,
+				21AACD7B2C8B7ACE0015D35E /* Repositories.swift in Sources */,
 				2147F7712BCE654F001230D7 /* UITextField+.swift in Sources */,
 				2150A3682BCD8541009B2420 /* AddFeedView.swift in Sources */,
 				217387D52B935369009FCF16 /* HomeView.swift in Sources */,
@@ -431,8 +535,9 @@
 				217387C02B933E86009FCF16 /* HomeViewController.swift in Sources */,
 				217387BC2B933E86009FCF16 /* AppDelegate.swift in Sources */,
 				2147F77F2BCE82E1001230D7 /* HomeViewModel.swift in Sources */,
+				21AACD712C8B792B0015D35E /* Repositories.swift in Sources */,
+				21AACD792C8B7A8E0015D35E /* HomeModel.swift in Sources */,
 				2147F77C2BCE795A001230D7 /* AddFeedViewModel.swift in Sources */,
-				217387E12B937BDF009FCF16 /* HomeModel.swift in Sources */,
 				217387D02B934DED009FCF16 /* MyProfileViewController.swift in Sources */,
 				217387BE2B933E86009FCF16 /* SceneDelegate.swift in Sources */,
 			);
