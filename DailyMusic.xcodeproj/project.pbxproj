@@ -13,6 +13,7 @@
 		2138698E2C8B0C2800FB2300 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698D2C8B0C2800FB2300 /* RxCocoa */; };
 		213869902C8B0C2800FB2300 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698F2C8B0C2800FB2300 /* RxRelay */; };
 		213869922C8B0C2800FB2300 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 213869912C8B0C2800FB2300 /* RxSwift */; };
+		2138699A2C8B12E500FB2300 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213869992C8B12E500FB2300 /* HomeViewModelTests.swift */; };
 		2147F7712BCE654F001230D7 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F7702BCE654F001230D7 /* UITextField+.swift */; };
 		2147F7742BCE6748001230D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2147F7732BCE6748001230D7 /* GoogleService-Info.plist */; };
 		2147F77C2BCE795A001230D7 /* AddFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F77B2BCE795A001230D7 /* AddFeedViewModel.swift */; };
@@ -32,8 +33,20 @@
 		217387E12B937BDF009FCF16 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387E02B937BDF009FCF16 /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2138699B2C8B12E500FB2300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 217387B02B933E86009FCF16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 217387B72B933E86009FCF16;
+			remoteInfo = DailyMusic;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		211BDB052BC853C700404C3D /* AddFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedViewController.swift; sourceTree = "<group>"; };
+		213869972C8B12E500FB2300 /* DailyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		213869992C8B12E500FB2300 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		2147F7702BCE654F001230D7 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		2147F7732BCE6748001230D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2147F77B2BCE795A001230D7 /* AddFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedViewModel.swift; sourceTree = "<group>"; };
@@ -53,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		213869942C8B12E500FB2300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		217387B52B933E86009FCF16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,6 +98,14 @@
 				2150A3662BCD8528009B2420 /* AddFeedViewController */,
 			);
 			path = AddFeed;
+			sourceTree = "<group>";
+		};
+		213869982C8B12E500FB2300 /* DailyMusicTests */ = {
+			isa = PBXGroup;
+			children = (
+				213869992C8B12E500FB2300 /* HomeViewModelTests.swift */,
+			);
+			path = DailyMusicTests;
 			sourceTree = "<group>";
 		};
 		2147F7722BCE6554001230D7 /* Extensions */ = {
@@ -125,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				217387BA2B933E86009FCF16 /* DailyMusic */,
+				213869982C8B12E500FB2300 /* DailyMusicTests */,
 				217387B92B933E86009FCF16 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				217387B82B933E86009FCF16 /* DailyMusic.app */,
+				213869972C8B12E500FB2300 /* DailyMusicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +231,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		213869962C8B12E500FB2300 /* DailyMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2138699D2C8B12E500FB2300 /* Build configuration list for PBXNativeTarget "DailyMusicTests" */;
+			buildPhases = (
+				213869932C8B12E500FB2300 /* Sources */,
+				213869942C8B12E500FB2300 /* Frameworks */,
+				213869952C8B12E500FB2300 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2138699C2C8B12E500FB2300 /* PBXTargetDependency */,
+			);
+			name = DailyMusicTests;
+			productName = DailyMusicTests;
+			productReference = 213869972C8B12E500FB2300 /* DailyMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		217387B72B933E86009FCF16 /* DailyMusic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 217387CC2B933E87009FCF16 /* Build configuration list for PBXNativeTarget "DailyMusic" */;
@@ -235,9 +283,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					213869962C8B12E500FB2300 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 217387B72B933E86009FCF16;
+					};
 					217387B72B933E86009FCF16 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -264,11 +316,19 @@
 			projectRoot = "";
 			targets = (
 				217387B72B933E86009FCF16 /* DailyMusic */,
+				213869962C8B12E500FB2300 /* DailyMusicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		213869952C8B12E500FB2300 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		217387B62B933E86009FCF16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +342,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		213869932C8B12E500FB2300 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2138699A2C8B12E500FB2300 /* HomeViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		217387B42B933E86009FCF16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +371,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2138699C2C8B12E500FB2300 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 217387B72B933E86009FCF16 /* DailyMusic */;
+			targetProxy = 2138699B2C8B12E500FB2300 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		217387C62B933E87009FCF16 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -315,6 +391,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2138699E2C8B12E500FB2300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MVRMRHCZ4J;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JBWang.DailyMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyMusic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyMusic";
+			};
+			name = Debug;
+		};
+		2138699F2C8B12E500FB2300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MVRMRHCZ4J;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JBWang.DailyMusicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyMusic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyMusic";
+			};
+			name = Release;
+		};
 		217387CA2B933E87009FCF16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,6 +609,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2138699D2C8B12E500FB2300 /* Build configuration list for PBXNativeTarget "DailyMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2138699E2C8B12E500FB2300 /* Debug */,
+				2138699F2C8B12E500FB2300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		217387B32B933E86009FCF16 /* Build configuration list for PBXProject "DailyMusic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
