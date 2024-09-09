@@ -8,9 +8,9 @@
 import Foundation
 import FirebaseFirestore
 
-struct Feed: Hashable, Codable {
-    var caption: String?
-    var imageURL: String?
-    var timestamp: Timestamp
-    var uuid = UUID()
-}
+//struct Feed: Hashable, Codable {
+//    var caption: String?
+//    var imageURL: String?
+//    var timestamp: Timestamp
+//    var uuid = UUID()
+//}

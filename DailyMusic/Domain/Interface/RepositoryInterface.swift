@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxSwift
 
-protocol FeedRepository {
-    
+protocol GetFeedRepository {
+    func getData() -> Single<[Feed]>
 }

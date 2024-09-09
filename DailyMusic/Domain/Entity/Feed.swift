@@ -8,8 +8,8 @@
 import Foundation
 import FirebaseFirestore
 
-//struct Feed {
-//    var caption: String?
-//    var imageURL: String?
-//    var timestamp: Timestamp
-//}
+struct Feed {
+    var caption: String?
+    var imageURL: String?
+    var timestamp: Timestamp
+}

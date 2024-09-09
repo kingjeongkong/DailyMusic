@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210FFD432C8F05B00011D309 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210FFD422C8F05B00011D309 /* GoogleService-Info.plist */; };
+		210FFD452C8F11FD0011D309 /* GetFeedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD442C8F11FD0011D309 /* GetFeedUseCase.swift */; };
 		211BDB062BC853C700404C3D /* AddFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211BDB052BC853C700404C3D /* AddFeedViewController.swift */; };
 		2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2122F3CC2BCEAD960065DD02 /* Kingfisher */; };
 		2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698A2C8B0C0300FB2300 /* SnapKit */; };
@@ -17,7 +19,6 @@
 		213869A72C8B1C0100FB2300 /* DailyMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213869A62C8B1C0100FB2300 /* DailyMusicUITests.swift */; };
 		213869A92C8B1C0100FB2300 /* DailyMusicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213869A82C8B1C0100FB2300 /* DailyMusicUITestsLaunchTests.swift */; };
 		2147F7712BCE654F001230D7 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F7702BCE654F001230D7 /* UITextField+.swift */; };
-		2147F7742BCE6748001230D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2147F7732BCE6748001230D7 /* GoogleService-Info.plist */; };
 		2147F77C2BCE795A001230D7 /* AddFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F77B2BCE795A001230D7 /* AddFeedViewModel.swift */; };
 		2147F77F2BCE82E1001230D7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F77E2BCE82E1001230D7 /* HomeViewModel.swift */; };
 		2147F7832BCE8980001230D7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2147F7822BCE8980001230D7 /* FirebaseFirestore */; };
@@ -33,9 +34,9 @@
 		217387D52B935369009FCF16 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387D42B935369009FCF16 /* HomeView.swift */; };
 		217387DF2B935AD1009FCF16 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387DE2B935AD1009FCF16 /* HomeCollectionViewCell.swift */; };
 		21AACD6D2C8B778A0015D35E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD6C2C8B778A0015D35E /* Feed.swift */; };
-		21AACD712C8B792B0015D35E /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD702C8B792B0015D35E /* Repositories.swift */; };
+		21AACD712C8B792B0015D35E /* RepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD702C8B792B0015D35E /* RepositoryInterface.swift */; };
 		21AACD792C8B7A8E0015D35E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD772C8B7A8E0015D35E /* HomeModel.swift */; };
-		21AACD7B2C8B7ACE0015D35E /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7A2C8B7ACE0015D35E /* Repositories.swift */; };
+		21AACD7B2C8B7ACE0015D35E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7A2C8B7ACE0015D35E /* Repository.swift */; };
 		21AACD7E2C8B7C9F0015D35E /* FeedResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210FFD422C8F05B00011D309 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		210FFD442C8F11FD0011D309 /* GetFeedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedUseCase.swift; sourceTree = "<group>"; };
 		211BDB052BC853C700404C3D /* AddFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedViewController.swift; sourceTree = "<group>"; };
 		213869972C8B12E500FB2300 /* DailyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213869992C8B12E500FB2300 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 		213869A62C8B1C0100FB2300 /* DailyMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMusicUITests.swift; sourceTree = "<group>"; };
 		213869A82C8B1C0100FB2300 /* DailyMusicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMusicUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2147F7702BCE654F001230D7 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		2147F7732BCE6748001230D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2147F77B2BCE795A001230D7 /* AddFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedViewModel.swift; sourceTree = "<group>"; };
 		2147F77E2BCE82E1001230D7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2150A3672BCD8541009B2420 /* AddFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedView.swift; sourceTree = "<group>"; };
@@ -79,9 +81,9 @@
 		217387D42B935369009FCF16 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		217387DE2B935AD1009FCF16 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		21AACD6C2C8B778A0015D35E /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
-		21AACD702C8B792B0015D35E /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		21AACD702C8B792B0015D35E /* RepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInterface.swift; sourceTree = "<group>"; };
 		21AACD772C8B7A8E0015D35E /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		21AACD7A2C8B7ACE0015D35E /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		21AACD7A2C8B7ACE0015D35E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210FFD462C8F12010011D309 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				210FFD442C8F11FD0011D309 /* GetFeedUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		211BDB072BC853CB00404C3D /* AddFeed */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +221,7 @@
 				21AACD6A2C8B775D0015D35E /* Data */,
 				21AACD692C8B77550015D35E /* Domain */,
 				21AACD672C8B77150015D35E /* Presenter */,
-				2147F7732BCE6748001230D7 /* GoogleService-Info.plist */,
+				210FFD422C8F05B00011D309 /* GoogleService-Info.plist */,
 				217387C92B933E87009FCF16 /* Info.plist */,
 				213869982C8B12E500FB2300 /* DailyMusicTests */,
 				213869A52C8B1C0100FB2300 /* DailyMusicUITests */,
@@ -304,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				21AACD6B2C8B777E0015D35E /* Entity */,
+				210FFD462C8F12010011D309 /* UseCase */,
 				21AACD722C8B79310015D35E /* Interface */,
 			);
 			path = Domain;
@@ -329,7 +340,7 @@
 		21AACD722C8B79310015D35E /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				21AACD702C8B792B0015D35E /* Repositories.swift */,
+				21AACD702C8B792B0015D35E /* RepositoryInterface.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -346,7 +357,7 @@
 		21AACD7C2C8B7AD40015D35E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				21AACD7A2C8B7ACE0015D35E /* Repositories.swift */,
+				21AACD7A2C8B7ACE0015D35E /* Repository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -495,8 +506,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				217387C82B933E87009FCF16 /* LaunchScreen.storyboard in Resources */,
+				210FFD432C8F05B00011D309 /* GoogleService-Info.plist in Resources */,
 				217387C52B933E87009FCF16 /* Assets.xcassets in Resources */,
-				2147F7742BCE6748001230D7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +538,8 @@
 				21AACD7E2C8B7C9F0015D35E /* FeedResponseDTO.swift in Sources */,
 				217387DF2B935AD1009FCF16 /* HomeCollectionViewCell.swift in Sources */,
 				21AACD6D2C8B778A0015D35E /* Feed.swift in Sources */,
-				21AACD7B2C8B7ACE0015D35E /* Repositories.swift in Sources */,
+				210FFD452C8F11FD0011D309 /* GetFeedUseCase.swift in Sources */,
+				21AACD7B2C8B7ACE0015D35E /* Repository.swift in Sources */,
 				2147F7712BCE654F001230D7 /* UITextField+.swift in Sources */,
 				2150A3682BCD8541009B2420 /* AddFeedView.swift in Sources */,
 				217387D52B935369009FCF16 /* HomeView.swift in Sources */,
@@ -535,7 +547,7 @@
 				217387C02B933E86009FCF16 /* HomeViewController.swift in Sources */,
 				217387BC2B933E86009FCF16 /* AppDelegate.swift in Sources */,
 				2147F77F2BCE82E1001230D7 /* HomeViewModel.swift in Sources */,
-				21AACD712C8B792B0015D35E /* Repositories.swift in Sources */,
+				21AACD712C8B792B0015D35E /* RepositoryInterface.swift in Sources */,
 				21AACD792C8B7A8E0015D35E /* HomeModel.swift in Sources */,
 				2147F77C2BCE795A001230D7 /* AddFeedViewModel.swift in Sources */,
 				217387D02B934DED009FCF16 /* MyProfileViewController.swift in Sources */,
