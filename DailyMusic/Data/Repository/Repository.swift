@@ -10,11 +10,12 @@ import FirebaseFirestore
 import FirebaseStorage
 import RxSwift
 
-final class GetFeedFirebaseRepository: GetFeedRepository {
+final class FeedFirebaseRepository: FeedRepository {
     
-    let db = Firestore.firestore()
+    private let db = Firestore.firestore()
+    private let storage = Storage.storage()
     
-    func getData() -> Single<[Feed]> {
+    func getFeed() -> Single<[Feed]> {
         return Single.create { single in
             self.db.collection("feeds")
                 .order(by: "timestamp", descending: true)
@@ -27,13 +28,57 @@ final class GetFeedFirebaseRepository: GetFeedRepository {
                     
                     querySnapshot?.documents.forEach({ document in
                         let data = document.data()
-                        let feedDTO  = FeedResponseDTO(document: data)
+                        let feedDTO  = GetFeedResponseDTO(document: data)
                         let feed = feedDTO.toDomainFeed()
                         feeds.append(feed)
-                        
                     })
                     single(.success(feeds))
                 }
+            return Disposables.create()
+        }
+    }
+
+    func uploadImage(image: UIImage) -> Single<String> {
+        return Single.create { [weak self] single in
+            guard let imageData = image.jpegData(compressionQuality: 0.8) else {
+                single(.failure(NSError(domain: "Invalid Image Data", code: -1)))
+                return Disposables.create()
+            }
+            
+            let storageRef = self?.storage.reference().child("images/\(UUID().uuidString).jpg")
+            storageRef?.putData(imageData, metadata: nil) { _, error in
+                if let error = error {
+                    single(.failure(error))
+                    return
+                }
+                
+                storageRef?.downloadURL { url, error in
+                    guard let downloadURL = url else {
+                        single(.failure(NSError(domain: "URL Error", code: -1)))
+                        return
+                    }
+                    single(.success(downloadURL.absoluteString))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func uploadFeed(feed: Feed) -> Completable {
+        return Completable.create { [weak self] completable in
+            let feedData: [String: Any] = [
+                "caption": feed.caption ?? "",
+                "imageURL": feed.imageURL ?? "",
+                "timestamp": FieldValue.serverTimestamp()
+            ]
+            
+            self?.db.collection("feeds").addDocument(data: feedData, completion: { error in
+                if let error = error {
+                    completable(.error(error))
+                } else {
+                    completable(.completed)
+                }
+            })
             return Disposables.create()
         }
     }

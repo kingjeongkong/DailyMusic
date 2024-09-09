@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 
-struct FeedResponseDTO {
+struct GetFeedResponseDTO {
     let caption: String?
     let imageURL: String?
     let timestamp: Timestamp
@@ -16,14 +16,14 @@ struct FeedResponseDTO {
     init(document: [String: Any]) {
         self.caption = document["caption"] as? String
         self.imageURL = document["imageURL"] as? String
-        self.timestamp = document["timestamp"] as! Timestamp
+        self.timestamp = document["timestamp"] as? Timestamp ?? Timestamp()
     }
 }
 
-extension FeedResponseDTO {
+extension GetFeedResponseDTO {
     func toDomainFeed() -> Feed {
         return Feed(caption: self.caption,
                     imageURL: self.imageURL,
-                    timestamp: self.timestamp)
+                    timestamp: self.timestamp.dateValue())
     }
 }

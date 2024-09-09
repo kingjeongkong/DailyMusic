@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		210FFD432C8F05B00011D309 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210FFD422C8F05B00011D309 /* GoogleService-Info.plist */; };
-		210FFD452C8F11FD0011D309 /* GetFeedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD442C8F11FD0011D309 /* GetFeedUseCase.swift */; };
+		210FFD452C8F11FD0011D309 /* FeedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD442C8F11FD0011D309 /* FeedUseCase.swift */; };
+		210FFD482C8F17AE0011D309 /* UploadFeedRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD472C8F17AE0011D309 /* UploadFeedRequestDTO.swift */; };
 		211BDB062BC853C700404C3D /* AddFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211BDB052BC853C700404C3D /* AddFeedViewController.swift */; };
 		2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2122F3CC2BCEAD960065DD02 /* Kingfisher */; };
 		2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698A2C8B0C0300FB2300 /* SnapKit */; };
@@ -35,9 +36,8 @@
 		217387DF2B935AD1009FCF16 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387DE2B935AD1009FCF16 /* HomeCollectionViewCell.swift */; };
 		21AACD6D2C8B778A0015D35E /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD6C2C8B778A0015D35E /* Feed.swift */; };
 		21AACD712C8B792B0015D35E /* RepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD702C8B792B0015D35E /* RepositoryInterface.swift */; };
-		21AACD792C8B7A8E0015D35E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD772C8B7A8E0015D35E /* HomeModel.swift */; };
 		21AACD7B2C8B7ACE0015D35E /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7A2C8B7ACE0015D35E /* Repository.swift */; };
-		21AACD7E2C8B7C9F0015D35E /* FeedResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */; };
+		21AACD7E2C8B7C9F0015D35E /* GetFeedResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AACD7D2C8B7C9F0015D35E /* GetFeedResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,8 @@
 
 /* Begin PBXFileReference section */
 		210FFD422C8F05B00011D309 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		210FFD442C8F11FD0011D309 /* GetFeedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedUseCase.swift; sourceTree = "<group>"; };
+		210FFD442C8F11FD0011D309 /* FeedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUseCase.swift; sourceTree = "<group>"; };
+		210FFD472C8F17AE0011D309 /* UploadFeedRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFeedRequestDTO.swift; sourceTree = "<group>"; };
 		211BDB052BC853C700404C3D /* AddFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedViewController.swift; sourceTree = "<group>"; };
 		213869972C8B12E500FB2300 /* DailyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213869992C8B12E500FB2300 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
@@ -82,9 +83,8 @@
 		217387DE2B935AD1009FCF16 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		21AACD6C2C8B778A0015D35E /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		21AACD702C8B792B0015D35E /* RepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryInterface.swift; sourceTree = "<group>"; };
-		21AACD772C8B7A8E0015D35E /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		21AACD7A2C8B7ACE0015D35E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponseDTO.swift; sourceTree = "<group>"; };
+		21AACD7D2C8B7C9F0015D35E /* GetFeedResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +123,25 @@
 		210FFD462C8F12010011D309 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				210FFD442C8F11FD0011D309 /* GetFeedUseCase.swift */,
+				210FFD442C8F11FD0011D309 /* FeedUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		210FFD492C8F17C50011D309 /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+				21AACD7D2C8B7C9F0015D35E /* GetFeedResponseDTO.swift */,
+			);
+			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
+		210FFD4A2C8F17CE0011D309 /* RequestDTO */ = {
+			isa = PBXGroup;
+			children = (
+				210FFD472C8F17AE0011D309 /* UploadFeedRequestDTO.swift */,
+			);
+			path = RequestDTO;
 			sourceTree = "<group>";
 		};
 		211BDB072BC853CB00404C3D /* AddFeed */ = {
@@ -234,7 +250,6 @@
 			children = (
 				217387D92B93596B009FCF16 /* HomeViewController */,
 				2147F7802BCE82E7001230D7 /* HomeViewModel */,
-				21AACD782C8B7A8E0015D35E /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -345,15 +360,6 @@
 			path = Interface;
 			sourceTree = "<group>";
 		};
-		21AACD782C8B7A8E0015D35E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				21AACD772C8B7A8E0015D35E /* HomeModel.swift */,
-			);
-			name = Model;
-			path = DailyMusic/Presenter/Home/Model;
-			sourceTree = SOURCE_ROOT;
-		};
 		21AACD7C2C8B7AD40015D35E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,7 +371,8 @@
 		21AACD7F2C8B7CA20015D35E /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				21AACD7D2C8B7C9F0015D35E /* FeedResponseDTO.swift */,
+				210FFD492C8F17C50011D309 /* ResponseDTO */,
+				210FFD4A2C8F17CE0011D309 /* RequestDTO */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -535,20 +542,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21AACD7E2C8B7C9F0015D35E /* FeedResponseDTO.swift in Sources */,
+				21AACD7E2C8B7C9F0015D35E /* GetFeedResponseDTO.swift in Sources */,
 				217387DF2B935AD1009FCF16 /* HomeCollectionViewCell.swift in Sources */,
 				21AACD6D2C8B778A0015D35E /* Feed.swift in Sources */,
-				210FFD452C8F11FD0011D309 /* GetFeedUseCase.swift in Sources */,
+				210FFD452C8F11FD0011D309 /* FeedUseCase.swift in Sources */,
 				21AACD7B2C8B7ACE0015D35E /* Repository.swift in Sources */,
 				2147F7712BCE654F001230D7 /* UITextField+.swift in Sources */,
 				2150A3682BCD8541009B2420 /* AddFeedView.swift in Sources */,
 				217387D52B935369009FCF16 /* HomeView.swift in Sources */,
 				211BDB062BC853C700404C3D /* AddFeedViewController.swift in Sources */,
+				210FFD482C8F17AE0011D309 /* UploadFeedRequestDTO.swift in Sources */,
 				217387C02B933E86009FCF16 /* HomeViewController.swift in Sources */,
 				217387BC2B933E86009FCF16 /* AppDelegate.swift in Sources */,
 				2147F77F2BCE82E1001230D7 /* HomeViewModel.swift in Sources */,
 				21AACD712C8B792B0015D35E /* RepositoryInterface.swift in Sources */,
-				21AACD792C8B7A8E0015D35E /* HomeModel.swift in Sources */,
 				2147F77C2BCE795A001230D7 /* AddFeedViewModel.swift in Sources */,
 				217387D02B934DED009FCF16 /* MyProfileViewController.swift in Sources */,
 				217387BE2B933E86009FCF16 /* SceneDelegate.swift in Sources */,

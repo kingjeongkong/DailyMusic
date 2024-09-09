@@ -47,13 +47,14 @@ class AddFeedViewController: UIViewController {
     }
     
     @objc private func uploadFeed() {
-        dismiss(animated: true) { [weak self] in
-            guard let self = self else { return }
-            HomeView.activityIndicator.startAnimating()
-            self.addFeedViewModel.uploadFeed(image: addFeedView.albumImageView.image, caption: addFeedView.captionTextField.text) {
-                NotificationCenter.default.post(name: NSNotification.Name("FeedUploaded"), object: nil)
-            }
-        }
+        dismiss(animated: true) 
+//        { [weak self] in
+//            guard let self = self else { return }
+//            HomeView.activityIndicator.startAnimating()
+//            self.addFeedViewModel.uploadFeed(image: addFeedView.albumImageView.image, caption: addFeedView.captionTextField.text) {
+//                NotificationCenter.default.post(name: NSNotification.Name("FeedUploaded"), object: nil)
+//            }
+//        }
     }
     
     // MARK: - imagePick
