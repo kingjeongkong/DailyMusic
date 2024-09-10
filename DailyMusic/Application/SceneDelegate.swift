@@ -13,10 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let homeVC = UINavigationController(rootViewController: HomeViewController())
+        
+        let homeVC = UINavigationController(rootViewController: HomeViewController(homeViewModel: HomeViewModel(feedUseCase: FeedUseCase(feedRepository: FeedFirebaseRepository()))))
         let myProfileVC = UINavigationController(rootViewController: MyProfileViewController())
+        
         homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         myProfileVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill"))
         

@@ -10,6 +10,11 @@
 		210FFD432C8F05B00011D309 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 210FFD422C8F05B00011D309 /* GoogleService-Info.plist */; };
 		210FFD452C8F11FD0011D309 /* FeedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD442C8F11FD0011D309 /* FeedUseCase.swift */; };
 		210FFD482C8F17AE0011D309 /* UploadFeedRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD472C8F17AE0011D309 /* UploadFeedRequestDTO.swift */; };
+		210FFD4D2C9047450011D309 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 210FFD4C2C9047450011D309 /* RxDataSources */; };
+		210FFD502C90B1150011D309 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 210FFD4F2C90B1150011D309 /* FirebaseAuth */; };
+		210FFD522C90B1150011D309 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 210FFD512C90B1150011D309 /* FirebaseDatabase */; };
+		210FFD542C90B1150011D309 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 210FFD532C90B1150011D309 /* FirebaseFirestore */; };
+		210FFD562C90B1150011D309 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 210FFD552C90B1150011D309 /* FirebaseStorage */; };
 		211BDB062BC853C700404C3D /* AddFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211BDB052BC853C700404C3D /* AddFeedViewController.swift */; };
 		2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2122F3CC2BCEAD960065DD02 /* Kingfisher */; };
 		2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698A2C8B0C0300FB2300 /* SnapKit */; };
@@ -22,8 +27,6 @@
 		2147F7712BCE654F001230D7 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F7702BCE654F001230D7 /* UITextField+.swift */; };
 		2147F77C2BCE795A001230D7 /* AddFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F77B2BCE795A001230D7 /* AddFeedViewModel.swift */; };
 		2147F77F2BCE82E1001230D7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F77E2BCE82E1001230D7 /* HomeViewModel.swift */; };
-		2147F7832BCE8980001230D7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2147F7822BCE8980001230D7 /* FirebaseFirestore */; };
-		2147F7852BCE8980001230D7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2147F7842BCE8980001230D7 /* FirebaseStorage */; };
 		2150A3682BCD8541009B2420 /* AddFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2150A3672BCD8541009B2420 /* AddFeedView.swift */; };
 		2163C4D52BC685EB005C7079 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2163C4D42BC685EB005C7079 /* Then */; };
 		217387BC2B933E86009FCF16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217387BB2B933E86009FCF16 /* AppDelegate.swift */; };
@@ -107,13 +110,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2138698E2C8B0C2800FB2300 /* RxCocoa in Frameworks */,
-				2147F7852BCE8980001230D7 /* FirebaseStorage in Frameworks */,
 				213869902C8B0C2800FB2300 /* RxRelay in Frameworks */,
 				2163C4D52BC685EB005C7079 /* Then in Frameworks */,
-				2147F7832BCE8980001230D7 /* FirebaseFirestore in Frameworks */,
+				210FFD542C90B1150011D309 /* FirebaseFirestore in Frameworks */,
 				2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */,
+				210FFD4D2C9047450011D309 /* RxDataSources in Frameworks */,
 				213869922C8B0C2800FB2300 /* RxSwift in Frameworks */,
+				210FFD522C90B1150011D309 /* FirebaseDatabase in Frameworks */,
+				210FFD562C90B1150011D309 /* FirebaseStorage in Frameworks */,
 				2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */,
+				210FFD502C90B1150011D309 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,13 +437,16 @@
 			name = DailyMusic;
 			packageProductDependencies = (
 				2163C4D42BC685EB005C7079 /* Then */,
-				2147F7822BCE8980001230D7 /* FirebaseFirestore */,
-				2147F7842BCE8980001230D7 /* FirebaseStorage */,
 				2122F3CC2BCEAD960065DD02 /* Kingfisher */,
 				2138698A2C8B0C0300FB2300 /* SnapKit */,
 				2138698D2C8B0C2800FB2300 /* RxCocoa */,
 				2138698F2C8B0C2800FB2300 /* RxRelay */,
 				213869912C8B0C2800FB2300 /* RxSwift */,
+				210FFD4C2C9047450011D309 /* RxDataSources */,
+				210FFD4F2C90B1150011D309 /* FirebaseAuth */,
+				210FFD512C90B1150011D309 /* FirebaseDatabase */,
+				210FFD532C90B1150011D309 /* FirebaseFirestore */,
+				210FFD552C90B1150011D309 /* FirebaseStorage */,
 			);
 			productName = DailyMusic;
 			productReference = 217387B82B933E86009FCF16 /* DailyMusic.app */;
@@ -477,10 +486,11 @@
 			mainGroup = 217387AF2B933E86009FCF16;
 			packageReferences = (
 				2163C4D32BC685EB005C7079 /* XCRemoteSwiftPackageReference "Then" */,
-				2147F7812BCE8980001230D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2122F3CB2BCEAD960065DD02 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				213869892C8B0C0300FB2300 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2138698C2C8B0C2800FB2300 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				210FFD4B2C9047450011D309 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				210FFD4E2C90B1150011D309 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 217387B92B933E86009FCF16 /* Products */;
 			projectDirPath = "";
@@ -889,6 +899,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		210FFD4B2C9047450011D309 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		210FFD4E2C90B1150011D309 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.0;
+			};
+		};
 		2122F3CB2BCEAD960065DD02 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -913,14 +939,6 @@
 				minimumVersion = 6.7.1;
 			};
 		};
-		2147F7812BCE8980001230D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
 		2163C4D32BC685EB005C7079 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -932,6 +950,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		210FFD4C2C9047450011D309 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 210FFD4B2C9047450011D309 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		210FFD4F2C90B1150011D309 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 210FFD4E2C90B1150011D309 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		210FFD512C90B1150011D309 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 210FFD4E2C90B1150011D309 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		210FFD532C90B1150011D309 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 210FFD4E2C90B1150011D309 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		210FFD552C90B1150011D309 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 210FFD4E2C90B1150011D309 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		2122F3CC2BCEAD960065DD02 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2122F3CB2BCEAD960065DD02 /* XCRemoteSwiftPackageReference "Kingfisher" */;
@@ -956,16 +999,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2138698C2C8B0C2800FB2300 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
-		};
-		2147F7822BCE8980001230D7 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2147F7812BCE8980001230D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		2147F7842BCE8980001230D7 /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2147F7812BCE8980001230D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
 		};
 		2163C4D42BC685EB005C7079 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

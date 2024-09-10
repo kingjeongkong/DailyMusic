@@ -19,7 +19,7 @@ final class FeedFirebaseRepository: FeedRepository {
         return Single.create { single in
             self.db.collection("feeds")
                 .order(by: "timestamp", descending: true)
-                .getDocuments { querySnapshot, error in
+                .getDocuments(source: .server) { querySnapshot, error in
                     if let error = error {
                         single(.failure(error))
                     }
