@@ -69,10 +69,20 @@ class HomeViewController: UIViewController {
         
         navigationItem.rightBarButtonItem?.rx.tap
             .bind { [weak self] _ in
-                let addFeedVC = AddFeedViewController()
+                guard let self = self else { return }
+                let addFeedVC = AddFeedViewController(viewModel: AddFeedViewModel(feedUseCase: FeedUseCase(feedRepository: FeedFirebaseRepository())))
                 let navController = UINavigationController(rootViewController: addFeedVC)
                 navController.modalPresentationStyle = .fullScreen
-                self?.present(navController, animated: true)
+                
+                addFeedVC.uploadCompletedToHome
+                    .bind {
+                        self.refreshControl.beginRefreshing()
+                        self.refreshControl.sendActions(for: .valueChanged)
+                        self.rootView.collectionView.setContentOffset(CGPoint(x: 0, y: -self.refreshControl.frame.size.height), animated: true)
+                    }
+                    .disposed(by: self.viewModel.disposeBag)
+                
+                self.present(navController, animated: true)
             }
             .disposed(by: viewModel.disposeBag)
     }

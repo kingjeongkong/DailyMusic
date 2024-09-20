@@ -11,5 +11,5 @@ import RxSwift
 protocol FeedRepository {
     func getFeed() -> Single<[Feed]>
     func uploadImage(image: UIImage) -> Single<String>
-    func uploadFeed(feed: Feed) -> Completable
+    func uploadFeed(feed: Feed) -> Single<Void>
 }

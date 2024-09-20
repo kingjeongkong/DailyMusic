@@ -6,79 +6,127 @@
 //
 
 import UIKit
-import SnapKit
-import Then
+import PhotosUI
+import RxCocoa
+import RxSwift
 
 class AddFeedViewController: UIViewController {
     
     // MARK: - properties
-    private let addFeedView = AddFeedView()
-    private let addFeedViewModel = AddFeedViewModel()
-    private let imagePicker = UIImagePickerController()
+    private let rootView = AddFeedView()
+    private let viewModel: AddFeedViewModel
+    private let imageRelay = PublishRelay<UIImage>()
+    let uploadCompletedToHome = PublishRelay<Void>()
     
     // MARK: - initialize
+    init(viewModel: AddFeedViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setInitialAttributes()
         pickImage()
+        bindUI()
     }
     
     // MARK: - set initial attributes
     private func setInitialAttributes() {
-        view = addFeedView
+        view = rootView
         
         let closeBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"),
-                                                           style: .plain,
-                                                           target: self,
-                                                           action: #selector(poptoMain))
+                                                 style: .plain,
+                                                 target: self,
+                                                 action: nil)
         let shareBarButtonItem = UIBarButtonItem(title: "공유",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(uploadFeed))
+                                                 style: .plain,
+                                                 target: self,
+                                                 action: nil)
         shareBarButtonItem.accessibilityIdentifier = "공유"
         
         navigationItem.leftBarButtonItem = closeBarButtonItem
         navigationItem.rightBarButtonItem = shareBarButtonItem
     }
     
-    @objc private func poptoMain() {
-        dismiss(animated: true)
-    }
-    
-    @objc private func uploadFeed() {
-        dismiss(animated: true) 
-//        { [weak self] in
-//            guard let self = self else { return }
-//            HomeView.activityIndicator.startAnimating()
-//            self.addFeedViewModel.uploadFeed(image: addFeedView.albumImageView.image, caption: addFeedView.captionTextField.text) {
-//                NotificationCenter.default.post(name: NSNotification.Name("FeedUploaded"), object: nil)
-//            }
-//        }
+    private func bindUI() {
+        guard let uploadButtonDidTap = navigationItem.rightBarButtonItem?.rx.tap.asObservable() else { return }
+        
+        let input = AddFeedViewModel.Input(captionText: rootView.captionTextField.rx.text.orEmpty.asObservable(),
+                                           musicImage: imageRelay.asObservable(),
+                                           uploadButtonDidTap: uploadButtonDidTap)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.uploadCompleted
+            .drive { [weak self] _ in
+                self?.dismiss(animated: true, completion: {
+                    self?.uploadCompletedToHome.accept(())
+                })
+            }
+            .disposed(by: viewModel.disposeBag)
+        
+        output.uploadFailed
+            .drive { error in
+                print(error.localizedDescription)
+            }
+            .disposed(by: viewModel.disposeBag)
+        
+        output.isUploading
+            .drive { [weak self] isUploading in
+                if isUploading {
+                    self?.rootView.activityIndicator.startAnimating()
+                } else {
+                    self?.rootView.activityIndicator.stopAnimating()
+                }
+            }
+            .disposed(by: viewModel.disposeBag)
+
+        
+        navigationItem.leftBarButtonItem?.rx.tap
+            .bind(onNext: { [weak self] _ in
+                self?.dismiss(animated: true)
+            })
+            .disposed(by: viewModel.disposeBag)
     }
     
     // MARK: - imagePick
     private func pickImage() {
-        addFeedView.albumImageView.isUserInteractionEnabled = true
-        imagePicker.delegate = self
-        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedImageView))
-        addFeedView.albumImageView.addGestureRecognizer(tapGestureRecognizer)
+        rootView.albumImageView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     @objc func tappedImageView() {
-        self.imagePicker.sourceType = .photoLibrary
-        self.imagePicker.allowsEditing = true
-        present(imagePicker, animated: true)
+        var configuration = PHPickerConfiguration()
+        configuration.filter = .images
+        configuration.selectionLimit = 1
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        present(picker, animated: true)
     }
 }
 
-extension AddFeedViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imagePicker.dismiss(animated: true) { [weak self] in
-            guard let self = self else { return }
-            let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-            self.addFeedView.albumImageView.image = editedImage
+extension AddFeedViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        picker.dismiss(animated: true)
+        
+        guard let itemProvider = results.first?.itemProvider else { return }
+        
+        if itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                DispatchQueue.main.async {
+                    guard let image = image as? UIImage else { return }
+                    self?.rootView.albumImageView.image = image
+                    self?.imageRelay.accept(image)
+                }
+            }
         }
     }
 }

@@ -10,5 +10,5 @@ import Foundation
 struct Feed {
     var caption: String?
     var imageURL: String?
-    var timestamp: Date
+    var timestamp: Date?
 }

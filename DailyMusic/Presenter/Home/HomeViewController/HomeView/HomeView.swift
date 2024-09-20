@@ -13,8 +13,6 @@ class HomeView: UIView {
     
     // MARK: - UI componets
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-//    lazy var createFeedButton = UIButton()
-    static let activityIndicator = UIActivityIndicatorView()
     
     // MARK: - Initialize
     override init(frame: CGRect) {
@@ -31,7 +29,7 @@ class HomeView: UIView {
     
     // MARK: - set UI
     private func setUI() {
-        [collectionView, HomeView.activityIndicator]
+        [collectionView]
             .forEach { addSubview($0) }
         
         collectionView.do {
@@ -39,12 +37,6 @@ class HomeView: UIView {
             $0.backgroundColor = .systemBackground
             $0.collectionViewLayout = layout()
             $0.accessibilityIdentifier = "homeCollectionView"
-        }
-        
-        HomeView.activityIndicator.do {
-            $0.style = .large
-            $0.hidesWhenStopped = true
-            $0.accessibilityIdentifier = "activityIndicator"
         }
     }
     
@@ -66,7 +58,5 @@ class HomeView: UIView {
     
     private func setLayout() {
         collectionView.snp.makeConstraints { $0.edges.equalTo(safeAreaLayoutGuide) }
-        
-        HomeView.activityIndicator.snp.makeConstraints { $0.center.equalToSuperview() }
     }
 }

@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseFirestore
-import FirebaseStorage
 import RxSwift
 import RxCocoa
 

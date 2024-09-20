@@ -153,8 +153,8 @@
 		211BDB072BC853CB00404C3D /* AddFeed */ = {
 			isa = PBXGroup;
 			children = (
-				2147F77D2BCE7962001230D7 /* AddFeedViewModel */,
 				2150A3662BCD8528009B2420 /* AddFeedViewController */,
+				2147F77D2BCE7962001230D7 /* AddFeedViewModel */,
 			);
 			path = AddFeed;
 			sourceTree = "<group>";

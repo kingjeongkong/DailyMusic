@@ -12,6 +12,7 @@ class AddFeedView: UIView {
     // MARK: - properties
     let albumImageView = UIImageView()
     let captionTextField = UITextField()
+    let activityIndicator = UIActivityIndicatorView()
 
     // MARK: - initialize
     override init(frame: CGRect) {
@@ -33,6 +34,7 @@ class AddFeedView: UIView {
             $0.image = UIImage(systemName: "camera")
             $0.layer.borderWidth = 0.5
             $0.contentMode = .scaleAspectFit
+            $0.isUserInteractionEnabled = true
             $0.accessibilityIdentifier = "albumImageView"
         }
         
@@ -42,11 +44,17 @@ class AddFeedView: UIView {
             $0.addPadding(left: 5, right: 5)
             $0.accessibilityIdentifier = "captionTextField"
         }
+        
+        activityIndicator.do {
+            $0.style = .large
+            $0.hidesWhenStopped = true
+            $0.accessibilityIdentifier = "activityIndicator"
+        }
     }
     
     // MARK: - set UI Layout
     private func setLayout() {
-        [albumImageView, captionTextField]
+        [albumImageView, captionTextField, activityIndicator]
             .forEach { addSubview($0) }
         
         albumImageView.snp.makeConstraints {
@@ -59,5 +67,7 @@ class AddFeedView: UIView {
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(keyboardLayoutGuide.snp.top).offset(-50)
         }
+        
+        activityIndicator.snp.makeConstraints { $0.center.equalToSuperview() }
     }
 }

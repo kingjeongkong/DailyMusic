@@ -19,16 +19,16 @@ final class FeedUseCase {
         return feedRepository.getFeed()
     }
     
-    func uploadFeed(feed: Feed, image: UIImage) -> Completable {
+    func uploadFeed(feed: Feed, image: UIImage) -> Single<Void> {
         return feedRepository.uploadImage(image: image)
-            .flatMapCompletable { [weak self] imageURL in
+            .flatMap { [weak self] imageURL in
                 guard let self = self else {
-                    return Completable.error(NSError(domain: "FeedUseCase", code: -1, userInfo: [NSLocalizedDescriptionKey: "Self is nil"]))
+                    return Single.error(NSError(domain: "FeedUseCase", code: -1, userInfo: [NSLocalizedDescriptionKey: "Self is nil"]))
                 }
                 
                 let feed = Feed(caption: feed.caption,
                                 imageURL: imageURL,
-                                timestamp: feed.timestamp)
+                                timestamp: nil)
                 return self.feedRepository.uploadFeed(feed: feed)
             }
     }

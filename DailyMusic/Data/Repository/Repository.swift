@@ -53,6 +53,10 @@ final class FeedFirebaseRepository: FeedRepository {
                 }
                 
                 storageRef?.downloadURL { url, error in
+                    if let error = error {
+                        single(.failure(error))
+                        return
+                    }
                     guard let downloadURL = url else {
                         single(.failure(NSError(domain: "URL Error", code: -1)))
                         return
@@ -63,9 +67,9 @@ final class FeedFirebaseRepository: FeedRepository {
             return Disposables.create()
         }
     }
-    
-    func uploadFeed(feed: Feed) -> Completable {
-        return Completable.create { [weak self] completable in
+
+    func uploadFeed(feed: Feed) -> Single<Void> {
+        return Single.create { [weak self] single in
             let feedData: [String: Any] = [
                 "caption": feed.caption ?? "",
                 "imageURL": feed.imageURL ?? "",
@@ -74,12 +78,13 @@ final class FeedFirebaseRepository: FeedRepository {
             
             self?.db.collection("feeds").addDocument(data: feedData, completion: { error in
                 if let error = error {
-                    completable(.error(error))
+                    single(.failure(error))
                 } else {
-                    completable(.completed)
+                    single(.success(()))
                 }
             })
             return Disposables.create()
         }
     }
+
 }
