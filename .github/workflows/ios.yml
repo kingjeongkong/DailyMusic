@@ -34,7 +34,7 @@ jobs:
 
       - name: Build
         env:
-          scheme: $(cat default)
+          scheme: ${{ steps.set_scheme.outputs.scheme }}
           platform: iOS Simulator
         run: |
           max_retries=3
