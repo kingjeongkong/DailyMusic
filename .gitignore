@@ -124,7 +124,6 @@ iOSInjectionProject/
 ### SwiftPackageManager ###
 # Packages
 xcuserdata
-Package.resolved
 
 ### SwiftPM ###
 
