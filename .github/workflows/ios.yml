@@ -9,7 +9,7 @@ on:
 jobs:
   build-and-test:
     name: Build and Test
-    runs-on: macos-latest
+    runs-on: macos-11 # 이 부분을 적절한 macOS 버전으로 설정
 
     steps:
       - name: Checkout Code
@@ -27,47 +27,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-swift-
 
-      - name: Install Xcode Dependencies
-        run: xcode-select -s /Applications/Xcode_15.4.app
-
       - name: Set Default Scheme
-        id: set_scheme
         run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          if [[ -z "$scheme_list" || "$scheme_list" == "null" ]]; then
-            echo "Failed to list schemes, exiting..."
-            exit 1
-          fi
-          scheme=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+          scheme_list=$(xcodebuild -list -json)
+          scheme=$(echo $scheme_list | jq -r '.project.targets[0]')
           echo "Using default scheme: $scheme"
           echo "scheme=$scheme" >> $GITHUB_ENV
 
       - name: Build Project
         run: |
           echo "Building scheme: ${{ env.scheme }}"
-          max_retries=3
-          count=0
-          until xcodebuild build-for-testing -scheme "${{ env.scheme }}" -destination "platform=iOS Simulator,name=Any available iPhone simulator"; do
-            count=$(($count+1))
-            if [ $count -ge $max_retries ]; then
-              echo "Attempt $count failed and there are no more retries left."
-              exit 1
-            fi
-            echo "Attempt $count failed! Trying again in 15 seconds..."
-            sleep 15
-          done
+          xcodebuild build-for-testing -scheme "${{ env.scheme }}" -destination "platform=iOS Simulator,name=Any available iPhone simulator"
 
       - name: Run Tests
         run: |
           echo "Testing scheme: ${{ env.scheme }}"
-          max_retries=3
-          count=0
-          until xcodebuild test-without-building -scheme "${{ env.scheme }}" -destination "platform=iOS Simulator,name=Any available iPhone simulator"; do
-            count=$(($count+1))
-            if [ $count -ge $max_retries ]; then
-              echo "Attempt $count failed and there are no more retries left."
-              exit 1
-            fi
-            echo "Attempt $count failed! Trying again in 15 seconds..."
-            sleep 15
-          done
+          xcodebuild test-without-building -scheme "${{ env.scheme }}" -destination "platform=iOS Simulator,name=Any available iPhone simulator"
