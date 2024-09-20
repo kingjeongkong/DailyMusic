@@ -11,8 +11,9 @@
 		210FFD452C8F11FD0011D309 /* FeedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD442C8F11FD0011D309 /* FeedUseCase.swift */; };
 		210FFD482C8F17AE0011D309 /* UploadFeedRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210FFD472C8F17AE0011D309 /* UploadFeedRequestDTO.swift */; };
 		210FFD4D2C9047450011D309 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 210FFD4C2C9047450011D309 /* RxDataSources */; };
-		21134AAA2C9D69BC007EB9A4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 21134AA92C9D69BC007EB9A4 /* FirebaseFirestore */; };
-		21134AAC2C9D69BC007EB9A4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21134AAB2C9D69BC007EB9A4 /* FirebaseStorage */; };
+		21134AAF2C9D72B0007EB9A4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 21134AAE2C9D72B0007EB9A4 /* FirebaseAnalytics */; };
+		21134AB12C9D72B0007EB9A4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 21134AB02C9D72B0007EB9A4 /* FirebaseFirestore */; };
+		21134AB32C9D72B0007EB9A4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21134AB22C9D72B0007EB9A4 /* FirebaseStorage */; };
 		211BDB062BC853C700404C3D /* AddFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211BDB052BC853C700404C3D /* AddFeedViewController.swift */; };
 		2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2122F3CC2BCEAD960065DD02 /* Kingfisher */; };
 		2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698A2C8B0C0300FB2300 /* SnapKit */; };
@@ -109,11 +110,12 @@
 			files = (
 				2138698E2C8B0C2800FB2300 /* RxCocoa in Frameworks */,
 				213869902C8B0C2800FB2300 /* RxRelay in Frameworks */,
-				21134AAC2C9D69BC007EB9A4 /* FirebaseStorage in Frameworks */,
+				21134AAF2C9D72B0007EB9A4 /* FirebaseAnalytics in Frameworks */,
+				21134AB32C9D72B0007EB9A4 /* FirebaseStorage in Frameworks */,
 				2163C4D52BC685EB005C7079 /* Then in Frameworks */,
 				2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */,
+				21134AB12C9D72B0007EB9A4 /* FirebaseFirestore in Frameworks */,
 				210FFD4D2C9047450011D309 /* RxDataSources in Frameworks */,
-				21134AAA2C9D69BC007EB9A4 /* FirebaseFirestore in Frameworks */,
 				213869922C8B0C2800FB2300 /* RxSwift in Frameworks */,
 				2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */,
 			);
@@ -439,8 +441,9 @@
 				2138698F2C8B0C2800FB2300 /* RxRelay */,
 				213869912C8B0C2800FB2300 /* RxSwift */,
 				210FFD4C2C9047450011D309 /* RxDataSources */,
-				21134AA92C9D69BC007EB9A4 /* FirebaseFirestore */,
-				21134AAB2C9D69BC007EB9A4 /* FirebaseStorage */,
+				21134AAE2C9D72B0007EB9A4 /* FirebaseAnalytics */,
+				21134AB02C9D72B0007EB9A4 /* FirebaseFirestore */,
+				21134AB22C9D72B0007EB9A4 /* FirebaseStorage */,
 			);
 			productName = DailyMusic;
 			productReference = 217387B82B933E86009FCF16 /* DailyMusic.app */;
@@ -484,7 +487,7 @@
 				213869892C8B0C0300FB2300 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2138698C2C8B0C2800FB2300 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				210FFD4B2C9047450011D309 /* XCRemoteSwiftPackageReference "RxDataSources" */,
-				21134AA82C9D69BC007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				21134AAD2C9D72B0007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 217387B92B933E86009FCF16 /* Products */;
 			projectDirPath = "";
@@ -909,7 +912,7 @@
 				minimumVersion = 5.0.2;
 			};
 		};
-		21134AA82C9D69BC007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		21134AAD2C9D72B0007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -957,14 +960,19 @@
 			package = 210FFD4B2C9047450011D309 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
 		};
-		21134AA92C9D69BC007EB9A4 /* FirebaseFirestore */ = {
+		21134AAE2C9D72B0007EB9A4 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21134AA82C9D69BC007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 21134AAD2C9D72B0007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		21134AB02C9D72B0007EB9A4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21134AAD2C9D72B0007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		21134AAB2C9D69BC007EB9A4 /* FirebaseStorage */ = {
+		21134AB22C9D72B0007EB9A4 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21134AA82C9D69BC007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 21134AAD2C9D72B0007EB9A4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
 		2122F3CC2BCEAD960065DD02 /* Kingfisher */ = {
