@@ -55,6 +55,7 @@ final class HomeViewModel {
 extension HomeViewModel {
     func getFeeds() -> Observable<[Feed]> {
         return feedUseCase.getFeed()
+            .retry(3)
             .asObservable()
             .catchAndReturn([])
             .do(onError: { [weak self] error in
