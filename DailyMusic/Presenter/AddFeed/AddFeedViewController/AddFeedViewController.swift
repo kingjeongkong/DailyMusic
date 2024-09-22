@@ -57,7 +57,7 @@ class AddFeedViewController: UIViewController {
     private func bindUI() {
         guard let uploadButtonDidTap = navigationItem.rightBarButtonItem?.rx.tap.asObservable() else { return }
         
-        let input = AddFeedViewModel.Input(captionText: rootView.captionTextField.rx.text.orEmpty.asObservable(),
+        let input = AddFeedViewModel.Input(captionText: rootView.captionTextView.rx.text.orEmpty.asObservable(),
                                            musicImage: imageRelay.asObservable(),
                                            uploadButtonDidTap: uploadButtonDidTap)
         

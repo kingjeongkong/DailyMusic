@@ -10,10 +10,14 @@ import UIKit
 class AddFeedView: UIView {
     
     // MARK: - properties
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     let albumImageView = UIImageView()
-    let captionTextField = UITextField()
+    let captionTextView = UITextView()
     let activityIndicator = UIActivityIndicatorView()
-
+    
+    let placeholderText = "Describe your today..."
+    
     // MARK: - initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +34,10 @@ class AddFeedView: UIView {
     private func setUI() {
         backgroundColor = .systemBackground
         
+        scrollView.do {
+            $0.keyboardDismissMode = .interactive
+        }
+        
         albumImageView.do {
             $0.image = UIImage(systemName: "camera")
             $0.layer.borderWidth = 0.5
@@ -38,11 +46,14 @@ class AddFeedView: UIView {
             $0.accessibilityIdentifier = "albumImageView"
         }
         
-        captionTextField.do {
-            $0.text = "New Test Caption" 
+        captionTextView.do {
             $0.layer.borderWidth = 1
-            $0.addPadding(left: 5, right: 5)
-            $0.accessibilityIdentifier = "captionTextField"
+            $0.font = UIFont.systemFont(ofSize: 16)
+            $0.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10) // 상하좌우 패딩 설정
+            $0.delegate = self // delegate 설정
+            $0.text = placeholderText // Placeholder 텍스트 설정
+            $0.textColor = .lightGray // Placeholder 텍스트 색상 설정
+            $0.accessibilityIdentifier = "captionTextView"
         }
         
         activityIndicator.do {
@@ -54,20 +65,48 @@ class AddFeedView: UIView {
     
     // MARK: - set UI Layout
     private func setLayout() {
-        [albumImageView, captionTextField, activityIndicator]
-            .forEach { addSubview($0) }
+        addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        [albumImageView, captionTextView, activityIndicator]
+            .forEach { contentView.addSubview($0) }
         
-        albumImageView.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(safeAreaLayoutGuide)
-            $0.height.equalTo(200)
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
-        captionTextField.snp.makeConstraints {
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.height.greaterThanOrEqualToSuperview().priority(.low)
+        }
+        
+        albumImageView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(300)
+        }
+        
+        captionTextView.snp.makeConstraints {
             $0.top.equalTo(albumImageView.snp.bottom).offset(40)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(keyboardLayoutGuide.snp.top).offset(-50)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(130)
         }
         
         activityIndicator.snp.makeConstraints { $0.center.equalToSuperview() }
     }
+}
+
+extension AddFeedView: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+            if textView.text == placeholderText {
+                textView.text = ""
+                textView.textColor = .black
+            }
+        }
+        
+        func textViewDidEndEditing(_ textView: UITextView) {
+            if textView.text.isEmpty {
+                textView.text = placeholderText
+                textView.textColor = .lightGray
+            }
+        }
 }

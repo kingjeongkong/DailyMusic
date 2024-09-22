@@ -65,7 +65,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         }
         
         captionLabel.do {
-            $0.text = "Nice Music"
+            $0.numberOfLines = 0
             $0.font = .systemFont(ofSize: 18)
         }
         
