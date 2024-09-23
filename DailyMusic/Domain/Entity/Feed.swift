@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Feed {
+struct Feed: Equatable {
     var caption: String?
     var imageURL: String?
     var timestamp: Date?

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		21134AB32C9D72B0007EB9A4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21134AB22C9D72B0007EB9A4 /* FirebaseStorage */; };
 		211BDB062BC853C700404C3D /* AddFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211BDB052BC853C700404C3D /* AddFeedViewController.swift */; };
 		2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2122F3CC2BCEAD960065DD02 /* Kingfisher */; };
+		21339DAA2CA133E200E65EAA /* FeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21339DA92CA133E200E65EAA /* FeedUseCaseTests.swift */; };
 		2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698A2C8B0C0300FB2300 /* SnapKit */; };
 		2138698E2C8B0C2800FB2300 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698D2C8B0C2800FB2300 /* RxCocoa */; };
 		213869902C8B0C2800FB2300 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698F2C8B0C2800FB2300 /* RxRelay */; };
@@ -64,6 +65,7 @@
 		210FFD442C8F11FD0011D309 /* FeedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUseCase.swift; sourceTree = "<group>"; };
 		210FFD472C8F17AE0011D309 /* UploadFeedRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFeedRequestDTO.swift; sourceTree = "<group>"; };
 		211BDB052BC853C700404C3D /* AddFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedViewController.swift; sourceTree = "<group>"; };
+		21339DA92CA133E200E65EAA /* FeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUseCaseTests.swift; sourceTree = "<group>"; };
 		213869972C8B12E500FB2300 /* DailyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213869992C8B12E500FB2300 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		213869A42C8B1C0100FB2300 /* DailyMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,10 @@
 		21AACD7A2C8B7ACE0015D35E /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		21AACD7D2C8B7C9F0015D35E /* GetFeedResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		21339D8D2CA01C2600E65EAA /* Mock */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Mock; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		213869942C8B12E500FB2300 /* Frameworks */ = {
@@ -161,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				213869992C8B12E500FB2300 /* HomeViewModelTests.swift */,
+				21339DA92CA133E200E65EAA /* FeedUseCaseTests.swift */,
 			);
 			path = DailyMusicTests;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 				21AACD672C8B77150015D35E /* Presenter */,
 				210FFD422C8F05B00011D309 /* GoogleService-Info.plist */,
 				217387C92B933E87009FCF16 /* Info.plist */,
+				21339D8D2CA01C2600E65EAA /* Mock */,
 				213869982C8B12E500FB2300 /* DailyMusicTests */,
 				213869A52C8B1C0100FB2300 /* DailyMusicUITests */,
 			);
@@ -432,6 +440,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				21339D8D2CA01C2600E65EAA /* Mock */,
+			);
 			name = DailyMusic;
 			packageProductDependencies = (
 				2163C4D42BC685EB005C7079 /* Then */,
@@ -533,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2138699A2C8B12E500FB2300 /* HomeViewModelTests.swift in Sources */,
+				21339DAA2CA133E200E65EAA /* FeedUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

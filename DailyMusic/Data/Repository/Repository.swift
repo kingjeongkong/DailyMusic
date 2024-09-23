@@ -12,8 +12,14 @@ import RxSwift
 
 final class FeedFirebaseRepository: FeedRepository {
     
-    private let db = Firestore.firestore()
-    private let storage = Storage.storage()
+    private let db: Firestore
+    private let storage: Storage
+    
+    // 의존성 주입을 위한 생성자 추가
+    init(db: Firestore = Firestore.firestore(), storage: Storage = Storage.storage()) {
+        self.db = db
+        self.storage = storage
+    }
     
     func getFeed() -> Single<[Feed]> {
         return Single.create { single in
@@ -37,7 +43,7 @@ final class FeedFirebaseRepository: FeedRepository {
             return Disposables.create()
         }
     }
-
+    
     func uploadImage(image: UIImage) -> Single<String> {
         return Single.create { [weak self] single in
             guard let imageData = image.jpegData(compressionQuality: 0.8) else {
@@ -67,7 +73,7 @@ final class FeedFirebaseRepository: FeedRepository {
             return Disposables.create()
         }
     }
-
+    
     func uploadFeed(feed: Feed) -> Single<Void> {
         return Single.create { [weak self] single in
             let feedData: [String: Any] = [
@@ -86,5 +92,5 @@ final class FeedFirebaseRepository: FeedRepository {
             return Disposables.create()
         }
     }
-
+    
 }
