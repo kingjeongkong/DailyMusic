@@ -17,6 +17,7 @@
 		211BDB062BC853C700404C3D /* AddFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211BDB052BC853C700404C3D /* AddFeedViewController.swift */; };
 		2122F3CD2BCEAD960065DD02 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2122F3CC2BCEAD960065DD02 /* Kingfisher */; };
 		21339DAA2CA133E200E65EAA /* FeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21339DA92CA133E200E65EAA /* FeedUseCaseTests.swift */; };
+		21339DBA2CA1557C00E65EAA /* FeedFirebaseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21339DB92CA1557C00E65EAA /* FeedFirebaseRepositoryTests.swift */; };
 		2138698B2C8B0C0300FB2300 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698A2C8B0C0300FB2300 /* SnapKit */; };
 		2138698E2C8B0C2800FB2300 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698D2C8B0C2800FB2300 /* RxCocoa */; };
 		213869902C8B0C2800FB2300 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2138698F2C8B0C2800FB2300 /* RxRelay */; };
@@ -66,6 +67,7 @@
 		210FFD472C8F17AE0011D309 /* UploadFeedRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFeedRequestDTO.swift; sourceTree = "<group>"; };
 		211BDB052BC853C700404C3D /* AddFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedViewController.swift; sourceTree = "<group>"; };
 		21339DA92CA133E200E65EAA /* FeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUseCaseTests.swift; sourceTree = "<group>"; };
+		21339DB92CA1557C00E65EAA /* FeedFirebaseRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedFirebaseRepositoryTests.swift; sourceTree = "<group>"; };
 		213869972C8B12E500FB2300 /* DailyMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		213869992C8B12E500FB2300 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		213869A42C8B1C0100FB2300 /* DailyMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 			children = (
 				213869992C8B12E500FB2300 /* HomeViewModelTests.swift */,
 				21339DA92CA133E200E65EAA /* FeedUseCaseTests.swift */,
+				21339DB92CA1557C00E65EAA /* FeedFirebaseRepositoryTests.swift */,
 			);
 			path = DailyMusicTests;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 			files = (
 				2138699A2C8B12E500FB2300 /* HomeViewModelTests.swift in Sources */,
 				21339DAA2CA133E200E65EAA /* FeedUseCaseTests.swift in Sources */,
+				21339DBA2CA1557C00E65EAA /* FeedFirebaseRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

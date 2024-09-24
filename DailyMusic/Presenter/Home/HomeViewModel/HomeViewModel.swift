@@ -57,9 +57,9 @@ extension HomeViewModel {
         return feedUseCase.getFeed()
             .retry(3)
             .asObservable()
-            .catchAndReturn([])
             .do(onError: { [weak self] error in
                 self?.errorMessageRelay.accept("Failed to fetch feeds: \(error.localizedDescription)")
             })
+            .catchAndReturn([])
     }
 }

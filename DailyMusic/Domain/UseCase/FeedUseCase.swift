@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-final class FeedUseCase {
+class FeedUseCase {
     private let feedRepository: FeedRepository
     
     init(feedRepository: FeedRepository) {
